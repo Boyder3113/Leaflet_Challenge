@@ -63,3 +63,50 @@ function Color(magnitude) {
         return 'green'
     }
 };
+
+function createMap() {
+   
+    var satellite = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>',
+        maxZoom: 13,
+        id: 'mapbox.satellite',
+        accessToken: API_KEY
+    });
+    var grayscale = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>',
+        maxZoom: 13,
+        id: 'mapbox.light',
+        accessToken: API_KEY
+    });
+
+    var outdoors = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>',
+        maxZoom: 13,
+        id: 'mapbox.outdoors',
+        accessToken: API_KEY
+    });
+    var dark = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>',
+        maxZoom: 13,
+        id: 'mapbox.dark',
+        accessToken: API_KEY
+    });
+
+    var baseLayers = {
+        "Satellite": satellite,
+        "Grayscale": grayscale,
+        "Outdoors": outdoors,
+        "Dark": dark       
+    };
+
+    var overlays = {
+        "Fault Lines": faultline,
+        "Earthquakes": earthquakeweek,
+        
+    };
+
+    var mymap = L.map('map', {
+        center: [29.8968, -110.5828],
+        zoom: 3.5,
+        layers: [satellite, earthquakeweek, faultline]
+    })};
