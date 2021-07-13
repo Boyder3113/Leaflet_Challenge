@@ -42,8 +42,24 @@ d3.json(plate_url, function (geoJson) {
         style: function (geoJsonFeature) {
             return {
                 weight: 2,
-                color: 'blue'
+                color: 'yellow'
             }
         },
     }).addTo(faultline);
 })
+
+function Color(magnitude) {
+    if (magnitude > 5) {
+        return '#FF8C00'
+    } else if (magnitude > 4) {
+        return 'red'
+    } else if (magnitude > 3) {
+        return 'darkorange'
+    } else if (magnitude > 2) {
+        return 'yellow'
+    } else if (magnitude > 1) {
+        return 'lightyellow'
+    } else {
+        return 'green'
+    }
+};
