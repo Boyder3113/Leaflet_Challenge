@@ -7,6 +7,7 @@ function markerSize(magnitude) {
     return magnitude * 4;
 };
 
+//create first map layer
 var earthquakeweek = new L.LayerGroup();
 
 d3.json(earthquake_url, function (geoJson) {
