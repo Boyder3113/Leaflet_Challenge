@@ -34,7 +34,7 @@ d3.json(earthquake_url, function (geoJson) {
     }).addTo(earthquakeweek);
     createMap(earthquakeweek);
 });
-
+//create faultline layer
 var faultline = new L.LayerGroup();
 
 d3.json(plate_url, function (geoJson) {
@@ -47,7 +47,7 @@ d3.json(plate_url, function (geoJson) {
         },
     }).addTo(faultline);
 })
-
+//create sizing of marker circles based on magnitude
 function Color(magnitude) {
     if (magnitude > 5) {
         return '#FF8C00'
@@ -63,7 +63,7 @@ function Color(magnitude) {
         return 'green'
     }
 };
-
+//create map by defining all tile layers and initializing at a certain lat/long location
 function createMap() {
    
     var satellite = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -109,10 +109,11 @@ function createMap() {
         center: [29.8968, -110.5828],
         zoom: 3.5,
         layers: [satellite, earthquakeweek, faultline]
-    })};
+    });
 
     L.control.layers(baseLayers, overlays).addTo(mymap);
  
+//create legend for map
     var legend = L.control({ position: 'bottomright' });
 
     legend.onAdd = function (map) {
@@ -132,4 +133,4 @@ function createMap() {
         return div;
     };
     legend.addTo(mymap);
-
+}
