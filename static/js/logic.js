@@ -34,3 +34,16 @@ d3.json(earthquake_url, function (geoJson) {
     }).addTo(earthquakeweek);
     createMap(earthquakeweek);
 });
+
+var faultline = new L.LayerGroup();
+
+d3.json(plate_url, function (geoJson) {
+    L.geoJSON(geoJson.features, {
+        style: function (geoJsonFeature) {
+            return {
+                weight: 2,
+                color: 'blue'
+            }
+        },
+    }).addTo(faultline);
+})
