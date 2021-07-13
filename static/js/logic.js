@@ -110,3 +110,26 @@ function createMap() {
         zoom: 3.5,
         layers: [satellite, earthquakeweek, faultline]
     })};
+
+    L.control.layers(baseLayers, overlays).addTo(mymap);
+ 
+    var legend = L.control({ position: 'bottomright' });
+
+    legend.onAdd = function (map) {
+
+        var div = L.DomUtil.create('div', 'info legend'),
+            magnitude = [0, 1, 2, 3, 4, 5],
+            labels = [];
+
+        div.innerHTML += "<h4 style='margin:4px'>Magnitude</h4>"
+
+         for (var i = 0; i < magnitude.length; i++) {
+             div.innerHTML +=
+             '<div class="color-box" style="background-color:' + Color(magnitude[i] + 1) + ';"></div> '+ 
+                magnitude[i] + (magnitude[i + 1] ? '&ndash;' + magnitude[i + 1] + '<br>' : '+');
+        }
+
+        return div;
+    };
+    legend.addTo(mymap);
+
