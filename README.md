@@ -26,6 +26,7 @@ To use: pull the files from the respository and host the app locally or via a se
 * Satellite Map
   ![image](https://github.com/Boyder3113/Leaflet_Challenge/blob/main/Images/Satellite%20map.png?raw=true)
   * ToolTip
+  
   ![image](https://github.com/Boyder3113/Leaflet_Challenge/blob/main/Images/Working%20Tooltip.PNG?raw=true)
 
 <!-- BUILT WITH -->
