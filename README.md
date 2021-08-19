@@ -8,9 +8,8 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <a href="#built-with">Project Screenshots</a>
-      <a href="#built-with">Built With</a>
-    </li>
+    <li><a href="#built-with">Project Screenshots</a></li>
+    <li><a href="#built-with">Built With</a></li>
   </ol>
 </details>
 
@@ -24,10 +23,10 @@ The app in this repository pulls the weekly JSON of earthquakes from USGS websit
 To use: pull the files from the respository and host the app locally or via a service like Github pages to see the working map with the last week of earthquake/fault line data.
 
 <!-- Project Screenshots -->
-* Biodiversity Dashboard
-  ![image](https://raw.githubusercontent.com/Boyder3113/BBBiodiversity.io/main/Images/BBDashboard.PNG)
-  * Dropdown Menu
-  ![image](https://github.com/Boyder3113/BBBiodiversity.io/blob/main/Images/BBDropdown.PNG?raw=true)
+* Satellite Map
+  ![image](https://github.com/Boyder3113/Leaflet_Challenge/blob/main/Images/Satellite%20map.png?raw=true)
+  * ToolTip
+  ![image](https://github.com/Boyder3113/Leaflet_Challenge/blob/main/Images/Working%20Tooltip.PNG?raw=true)
 
 <!-- BUILT WITH -->
 ## Built With
