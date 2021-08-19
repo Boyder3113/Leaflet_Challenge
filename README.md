@@ -19,7 +19,7 @@ Use this interactive map to track earthquake activity in the past week.
 
 The app in this repository pulls the weekly JSON of earthquakes from USGS website and populates a map with circles that mark the location and size of the earthquake.
 
-Once you have the files pulled, host the app locally or via a service like Github pages to see the working map with the last week of earthquake/fault line data.
+to use: pull the files from the respository and host the app locally or via a service like Github pages to see the working map with the last week of earthquake/fault line data.
 
 <!-- BUILT WITH -->
 ## Built With
